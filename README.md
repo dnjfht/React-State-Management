@@ -75,7 +75,7 @@ function MyIntroduction() {
 export default MyIntroduction;
 
 ```
-
+<br/>
 <h2 style={{marginTop:"20px"}}>[전역 상태 관리 : Global State Management]</h2>
 <p style={{marginBottom:"10px"}}>그러나 애플리케이션의 규모가 커지게 되면 상태가 여러 컴포넌트에 분산되게 되어 관리가 어려워지고,<br/>
 흔히 말하는 Prop drilling 문제가 발생할 수 있다.<br/>
