@@ -18,10 +18,10 @@ React를 사용하는 개발자에겐 기본 중의 기본(많이 사용하는).
 useReducer를 컴포넌트의 최상위에 호출하고, reducer를 사용해 state를 관리한다.
 <br/>
 <div style={{marginTop: "20px"}}>
-  import {useRouter} from "react";<br/>
+  <p>import {useRouter} from "react";</p>
 
-  function reducer(state, action) {<br/>
-    switch(action.type) {<br/>
+  <p style={{marginTop:"5px"}}>function reducer(state, action) {</p>
+    <p style={{marginLeft:"4px"}}>switch(action.type) {</p>
       case "incremented_age" : {<br/>
         return {<br/>
           age : state.age + 1<br/>
