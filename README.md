@@ -17,6 +17,63 @@ React를 사용하는 개발자에겐 기본 중의 기본(많이 사용하는).
 상태가 복잡하거나 상태 관리 로직이 복잡한 경우에는 reducer 함수와 dispatch를 이용한 useReducer hook을 사용.<br/>
 useReducer를 컴포넌트의 최상위에 호출하고, reducer를 사용해 state를 관리한다.
 <br/>
+```
+import { useReducer } from "react";
+
+const countReducer = (state, action) => {
+  switch (action.type) {
+    case "incremented_age": {
+      return {
+        age: state.age + 1,
+        name: state.name,
+      };
+    }
+    case "changed_name": {
+      return {
+        age: state.age,
+        name: action.nextName,
+      };
+    }
+  }
+
+  throw Error("Unknown action: " + action.type);
+};
+
+function MyIntroduction() {
+  const [userState, dispatch] = useReducer(countReducer, {
+    age: 25,
+    name: "유승민",
+  });
+
+  const handlePlusCountButtonClick = () => {
+    dispatch({ type: "incremented_age" });
+  };
+
+  const handleChangeName = (e) => {
+    dispatch({
+      type: "changed_name",
+      nextName: e.target.value,
+    });
+  };
+
+  return (
+    <div>
+      <input
+        type="text"
+        onChange={handleChangeName}
+        placeholder="write name plz..."
+      />
+      <button onClick={handlePlusCountButtonClick}>Increment age</button>
+      <p>
+        Hello! My name is {userState.name}...! I'm {userState.age} years old..!
+      </p>
+    </div>
+  );
+}
+
+export default MyIntroduction;
+
+```
 
 <h2 style={{marginTop:"20px"}}>[전역 상태 관리 : Global State Management]</h2>
 <p style={{marginBottom:"10px"}}>그러나 애플리케이션의 규모가 커지게 되면 상태가 여러 컴포넌트에 분산되게 되어 관리가 어려워지고,<br/>
