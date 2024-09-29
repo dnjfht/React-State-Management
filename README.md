@@ -17,11 +17,11 @@ React를 사용하는 개발자에겐 기본 중의 기본(많이 사용하는).
 상태가 복잡하거나 상태 관리 로직이 복잡한 경우에는 reducer 함수와 dispatch를 이용한 useReducer hook을 사용.<br/>
 useReducer를 컴포넌트의 최상위에 호출하고, reducer를 사용해 state를 관리한다.
 <br/>
-<div style={{marginTop: "20px"}}>
-  <p>import {useRouter} from "react";</p>
+<p style={{marginTop: "20px"}}>
+import {useRouter} from "react";<br/><br/>
 
-  <p>function reducer(state, action) {</p>
-    <p style={{marginLeft:"4px"}}>switch(action.type) {</p>
+function reducer(state, action) {<br/>
+    <span style={{marginLeft:"4px"}}>switch(action.type){</span><br/>
       case "incremented_age" : {<br/>
         return {<br/>
           age : state.age + 1<br/>
@@ -43,7 +43,7 @@ useReducer를 컴포넌트의 최상위에 호출하고, reducer를 사용해 st
       </>
     )
   };
-</div>
+</p>
 
 
 <h2 style={{marginTop:"20px"}}>[전역 상태 관리 : Global State Management]</h2>
