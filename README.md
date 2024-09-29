@@ -20,7 +20,7 @@ useReducer를 컴포넌트의 최상위에 호출하고, reducer를 사용해 st
 <div style={{marginTop: "20px"}}>
   <p>import {useRouter} from "react";</p>
 
-  <p style={{marginTop:"5px"}}>function reducer(state, action) {</p>
+  <p>function reducer(state, action) {</p>
     <p style={{marginLeft:"4px"}}>switch(action.type) {</p>
       case "incremented_age" : {<br/>
         return {<br/>
